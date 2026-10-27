@@ -1,0 +1,9 @@
+{
+  "name": "aidlink-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend nativo para la fiesta de Halloween de AidLink",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

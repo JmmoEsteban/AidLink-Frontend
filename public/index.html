@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AidLink Halloween Night</title>
+    <meta
+      name="description"
+      content="Portal de registro para la gran fiesta de Halloween de AidLink"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-orange"></div>
+    <div class="bg-glow glow-purple"></div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">A</div>
+        <div>
+          <p class="brand-label">AidLink</p>
+          <span class="brand-subtitle">Halloween Night</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#registro">Registro</a>
+        <a href="#invitados">Invitados</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">Fiesta del año</p>
+          <h1>Vive una noche de terror <span>y magia</span></h1>
+          <p class="hero-text">
+            Registra a tus invitados, organiza la entrada y crea una experiencia de Halloween
+            inolvidable para toda la familia, amigos y amantes de la aventura.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="#registro">Registrarme</a>
+            <a class="ghost-btn" href="#invitados">Ver invitados</a>
+          </div>
+
+          <div class="feature-list" aria-label="Ventajas de la fiesta">
+            <div>
+              <strong>2k+</strong>
+              <span>Asistentes</span>
+            </div>
+            <div>
+              <strong>12</strong>
+              <span>Escenarios</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>Atención</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="ticket-card">
+            <span class="ticket-tag">Entrada VIP</span>
+            <h2>Halloween Night</h2>
+            <ul>
+              <li>🎃 Decoración inmersiva</li>
+              <li>🕷️ Shows en vivo</li>
+              <li>🧟 Actividades sorpresa</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Resumen de asistentes">
+        <div class="stat-card accent-orange">
+          <span>Total</span>
+          <strong id="totalUsuarios">0</strong>
+          <small>Invitados confirmados</small>
+        </div>
+        <div class="stat-card accent-purple">
+          <span>Activos</span>
+          <strong id="usuariosActivos">0</strong>
+          <small>Con acceso permitido</small>
+        </div>
+        <div class="stat-card accent-green">
+          <span>Disponibles</span>
+          <strong id="usuariosDisponibles">0</strong>
+          <small>Entradas abiertas</small>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel form-panel" id="registro">
+          <div class="section-head">
+            <p class="eyebrow">Registro</p>
+            <h3>Inscripción del invitado</h3>
+          </div>
+
+          <form id="userForm" class="user-form">
+            <input type="hidden" id="userId" name="id" />
+
+            <div class="field-row two-columns">
+              <label>
+                <span>Nombre</span>
+                <input id="nombre" name="nombre" type="text" placeholder="Ej. Ana" required />
+              </label>
+              <label>
+                <span>Apellido</span>
+                <input id="apellido" name="apellido" type="text" placeholder="Ej. Gómez" required />
+              </label>
+            </div>
+
+            <label>
+              <span>Correo electrónico</span>
+              <input id="correo" name="correo" type="email" placeholder="correo@ejemplo.com" required />
+            </label>
+
+            <label>
+              <span>Contraseña</span>
+              <input id="contrasena" name="contrasena" type="password" placeholder="********" required />
+            </label>
+
+            <label>
+              <span>Estado</span>
+              <select id="estado" name="estado">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+            </label>
+
+            <div class="button-row">
+              <button type="submit" class="primary-btn wide">Guardar invitado</button>
+              <button type="button" class="secondary-btn wide" id="cancelEdit">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel list-panel" id="invitados">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">Invitados</p>
+              <h3>Lista de registro</h3>
+            </div>
+            <div class="search-wrap">
+              <input id="searchInput" type="search" placeholder="Buscar por correo o nombre" />
+            </div>
+          </div>
+
+          <div id="userList" class="user-list" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
