@@ -1,164 +1,100 @@
+
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AidLink Halloween Night</title>
-    <meta
-      name="description"
-      content="Portal de registro para la gran fiesta de Halloween de AidLink"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="bg-glow glow-orange"></div>
-    <div class="bg-glow glow-purple"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <header class="topbar">
-      <div class="brand-wrap">
-        <div class="brand-mark">A</div>
-        <div>
-          <p class="brand-label">AidLink</p>
-          <span class="brand-subtitle">Halloween Night</span>
-        </div>
-      </div>
+    <main class="container">
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#registro">Registro</a>
-        <a href="#invitados">Invitados</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" id="inicio">
-        <div class="hero-copy">
-          <p class="eyebrow">Fiesta del año</p>
-          <h1>Vive una noche de terror <span>y magia</span></h1>
-          <p class="hero-text">
-            Registra a tus invitados, organiza la entrada y crea una experiencia de Halloween
-            inolvidable para toda la familia, amigos y amantes de la aventura.
-          </p>
-
-          <div class="hero-actions">
-            <a class="primary-btn" href="#registro">Registrarme</a>
-            <a class="ghost-btn" href="#invitados">Ver invitados</a>
-          </div>
-
-          <div class="feature-list" aria-label="Ventajas de la fiesta">
-            <div>
-              <strong>2k+</strong>
-              <span>Asistentes</span>
+        <header class="hero">
+            <div class="pumpkin">🎃</div>
+            <div class="hero-text">
+                <p class="eyebrow">Fiesta de disfrazes</p>
+                <h1>Lista de acceso</h1>
+                <p class="subtitle">Gestiona los usuarios de que podran entrar a la fiesta.</p>
             </div>
-            <div>
-              <strong>12</strong>
-              <span>Escenarios</span>
-            </div>
-            <div>
-              <strong>24/7</strong>
-              <span>Atención</span>
-            </div>
-          </div>
-        </div>
+            <div class="moon">🌕</div>
+            <span class="bat bat-one">🦇</span>
+            <span class="bat bat-two">🦇</span>
+        </header>
 
-        <div class="hero-panel">
-          <div class="ticket-card">
-            <span class="ticket-tag">Entrada VIP</span>
-            <h2>Halloween Night</h2>
-            <ul>
-              <li>🎃 Decoración inmersiva</li>
-              <li>🕷️ Shows en vivo</li>
-              <li>🧟 Actividades sorpresa</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats" aria-label="Resumen de asistentes">
-        <div class="stat-card accent-orange">
-          <span>Total</span>
-          <strong id="totalUsuarios">0</strong>
-          <small>Invitados confirmados</small>
-        </div>
-        <div class="stat-card accent-purple">
-          <span>Activos</span>
-          <strong id="usuariosActivos">0</strong>
-          <small>Con acceso permitido</small>
-        </div>
-        <div class="stat-card accent-green">
-          <span>Disponibles</span>
-          <strong id="usuariosDisponibles">0</strong>
-          <small>Entradas abiertas</small>
-        </div>
-      </section>
-
-      <section class="content-grid">
-        <div class="panel form-panel" id="registro">
-          <div class="section-head">
-            <p class="eyebrow">Registro</p>
-            <h3>Inscripción del invitado</h3>
-          </div>
-
-          <form id="userForm" class="user-form">
-            <input type="hidden" id="userId" name="id" />
-
-            <div class="field-row two-columns">
-              <label>
-                <span>Nombre</span>
-                <input id="nombre" name="nombre" type="text" placeholder="Ej. Ana" required />
-              </label>
-              <label>
-                <span>Apellido</span>
-                <input id="apellido" name="apellido" type="text" placeholder="Ej. Gómez" required />
-              </label>
+        <section class="panel register-panel">
+            <div class="section-heading">
+                <span class="heading-icon">☠</span>
+                <div>
+                    <h2>Registrar usuario</h2>
+                    <p>Agrega un nuevo miembro a la lista</p>
+                </div>
             </div>
 
-            <label>
-              <span>Correo electrónico</span>
-              <input id="correo" name="correo" type="email" placeholder="correo@ejemplo.com" required />
-            </label>
+<form id="formUsuario">
+    <div class="form-grid">
+        <label>
+            Nombre
+            <input type="text" id="nombre" placeholder="Ingresa el nombre" required>
+        </label>
+        <label>
+            Apellido
+            <input type="text" id="apellido" placeholder="Ingresa el apellido" required>
+        </label>
 
-            <label>
-              <span>Contraseña</span>
-              <input id="contrasena" name="contrasena" type="password" placeholder="********" required />
-            </label>
+        <label>
+            Correo electrónico
+            <input type="email" id="correo" placeholder="Ingresa el correo" required>
+        </label>
 
-            <label>
-              <span>Estado</span>
-              <select id="estado" name="estado">
-                <option value="1">Activo</option>
-                <option value="0">Inactivo</option>
-              </select>
-            </label>
+    <button class="btn btn-primary" type="button" onclick="registrarUsuario()">
+        ♟ &nbsp; Registrar usuario
+    </button>
+</form>
+        </section>
 
-            <div class="button-row">
-              <button type="submit" class="primary-btn wide">Guardar invitado</button>
-              <button type="button" class="secondary-btn wide" id="cancelEdit">Cancelar</button>
+        <section class="panel users-panel">
+            <div class="users-toolbar">
+                <div class="section-heading">
+                    <span class="heading-icon">👥</span>
+                    <div>
+                        <h2>Lista de usuarios</h2>
+                        <p>Almas que ya forman parte de la fiesta</p>
+                    </div>
+                </div>
             </div>
-          </form>
-        </div>
 
-        <div class="panel list-panel" id="invitados">
-          <div class="section-head split-head">
-            <div>
-              <p class="eyebrow">Invitados</p>
-              <h3>Lista de registro</h3>
-            </div>
-            <div class="search-wrap">
-              <input id="searchInput" type="search" placeholder="Buscar por correo o nombre" />
-            </div>
-          </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th class="actions-heading">Acciones</th>
+                        </tr>
+                    </thead>
 
-          <div id="userList" class="user-list" aria-live="polite"></div>
-        </div>
-      </section>
+                    <tbody id="tablaUsuarios">
+                    </tbody>
+                </table>
+            </div>
+
+            <footer class="table-footer">
+                <span>Mostrando 1–10 usuarios</span>
+                <nav class="pagination" aria-label="Paginación">
+                    <button type="button" disabled>‹</button>
+                    <button type="button" class="current">1</button>
+                    <button type="button" disabled>›</button>
+                </nav>
+            </footer>
+        </section>
+
     </main>
 
-    <div id="toast" class="toast" aria-live="polite"></div>
-
-    <script src="/app.js"></script>
-  </body>
+</body>
 </html>
